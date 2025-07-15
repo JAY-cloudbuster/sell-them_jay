@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Prime Subscription</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="subscription.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="home.html"><img src="DAC logo(1).png" width="125px"></a>
+            </div>
+           <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                     <li><a href="products.html">Products</a></li>
+                     <li><a href="subscription.html">Subscription</a></li>
+                     <li><a href="account.html">Account</a></li>
+
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="cart.png" width="30px" height="30px"></a>
+            
+        </div>
+       
+    </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="animated-text">Join Shoe Prime</h1>
+      <p class="animated-text delay-2">Exclusive benefits and perks for shoe lovers.</p>
+      <a href="#plans" class="btn btn-animated">Subscribe Now</a>
+    </section>
+
+    <section id="plans">
+      <h2 class="section-title">Subscription Plans</h2>
+      <div class="plan-cards">
+        <div class="plan-card">
+          <div class="plan-card-header">
+            <h3>Basic</h3>
+            <span class="price"><span id="basicPrice">199rs.</span>/month</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-check"></i> Free shipping</li>
+            <li><i class="fas fa-check"></i> 10% discount</li>
+          </ul>
+          <button class="btn btn-animated">Subscribe</button>
+        </div>
+        <!-- Add more plan cards here -->
+      </div>
+    </section>
+
+    <section id="features" class="parallax">
+      <div class="content">
+        <h2 class="section-title">Prime Features</h2>
+        <ul>
+          <li class="feature-card">
+            <i class="fas fa-box-open"></i>
+            <h4>Early Access</h4>
+            <p>Get early access to new releases.</p>
+          </li>
+          <li class="feature-card">
+            <i class="fas fa-tag"></i>
+            <h4>Exclusive Sales</h4>
+            <p>Enjoy members-only sales and discounts.</p>
+          </li>
+          <li class="feature-card">
+            <i class="fas fa-headset"></i>
+            <h4>Priority Support</h4>
+            <p>Receive priority customer support.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Footer content -->
+  </footer>
+
+  <script>
+    // Price calculator
+const basicPriceElement = document.getElementById('basicPrice');
+
+const calculatePrice = (plan, duration) => {
+  let price;
+
+  switch (plan) {
+    case 'basic':
+      price = duration === 'monthly' ? 199 : 199.99;
+      break;
+    default:
+      price = 0;
+  }
+
+  return price.toFixed(2);
+};
+
+
+basicPriceElement.textContent = calculatePrice('basic', 'monthly');
+const plansLink = document.querySelector('.hero .btn');
+const plansSection = document.getElementById('plans');
+
+plansLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  plansSection.scrollIntoView({ behavior: 'smooth' });
+});
+  </script>
+</body>
+</html>
